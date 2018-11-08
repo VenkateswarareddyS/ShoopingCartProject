@@ -8,6 +8,9 @@
     position: relative;
     border: 1px solid #EFEFEF;
     margin: 10px 0;
+    margin-right: 500px;
+
+    
 
   &:hover {
     box-shadow: 0 0 5px rgba(50,50,50,0.3);
@@ -18,9 +21,11 @@
   }
 
   .product_price {
-    float: right;
-    margin-top: 1rem;
+    //float: right;
+   // margin-top: 1rem;
+   padding-right: 40px;
   }
+
 
   div.row{
     position: static;
@@ -36,8 +41,28 @@
   }
 
 
-  product_price js-product-price{
-    text-aglin:center;
+  
+
+  // intro.h3 {
+  //   margin-left: 30px;
+  // }
+  .buttonContent{
+margin-left: 441px;
+margin-bottom: 104px;
+margin-top: -65px;
+}
+
+
+  .buttonContentMargin{
+
+    margin-top:-81px;
+    margin-bottom:104px;
   }
 
+
+  .productContent{
+    margin-left: 276px;
+    margin-bottom: 0px;
+    margin-top: -145px;
+  }
 }

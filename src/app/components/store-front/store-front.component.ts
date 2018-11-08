@@ -17,16 +17,44 @@ import { TemplateRef } from "@angular/core/src/linker/template_ref";
 export class StoreFrontComponent implements OnInit {
   public products: Observable<Product[]>;
   
-  
-  public constructor(private productsService: ProductsDataService,
-                     
-                    private elr:ElementRef) {
-  }
+  totalItems:number=0;
+  productPrice:number=0;
+  totalPrice:number;
+  listOfProducts:Product[];
+  res:Response;
 
+
+  public constructor(private productsService: ProductsDataService,
+    private elr:ElementRef) {
+  }
 
 
 
   public ngOnInit(): void {
     this.products = this.productsService.all();
+    this.productsService.all().subscribe(res =>{
+    this.listOfProducts=res;
+    console.log(this.listOfProducts);
+    });
+
+
+  }
+
+
+  public addCart(data)
+  {
+    data["quantity"] = data["quantity"]+1;
+    this.totalItems=this.totalItems+1;
+    this.productPrice=this.productPrice+data.price;
+    this.productsService.setTotalItems(this.totalItems);
+    this.productsService.setTotalItems(this.productPrice);
+
+  }
+
+  public removeCart(data)
+  {
+    data["quantity"] = data["quantity"]-1;
+    this.totalItems=this.totalItems-1;
+    this.productPrice=this.productPrice-data.price;
   }
 }

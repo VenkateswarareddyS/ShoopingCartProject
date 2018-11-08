@@ -1,0 +1,20 @@
+
+<div  class ="basket">   
+  <h1>Your Shopping Basket</h1>
+  <div class ="row">
+    <div>
+
+      <h2>Sub Total({{noOfItems}} items):<span class="gross-total" id ="grosstotal">{{ grosstotal | currency :'GBP':true}}</span></h2>
+    </div>
+    <div class ="medium-8 columns">
+      <h4>
+          <input type ="submit" id ="checkout" (click) ="proceedToCheckout();" value ="Processed To Checkout">
+      </h4>
+
+    </div>
+    <div class ="medium-3 columns">
+      Or
+      <input type ="button" id ="emptycart" value ="Empty Shopping basket" (click) ="emptyBasket();">
+    </div>
+  </div>
+</div>

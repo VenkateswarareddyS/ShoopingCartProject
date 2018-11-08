@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 
 import { StoreFrontComponent } from "./components/store-front/store-front.component";
 import { SignInComponent } from "./components/sign-in/sign-in.component";
+import { CheckoutComponent } from "./components/checkout/checkout.component";
 
 
 @NgModule({
@@ -17,9 +18,21 @@ import { SignInComponent } from "./components/sign-in/sign-in.component";
             },
 
             {
+
+                component: StoreFrontComponent,
+                path: "products"
+            },
+
+            {
                 component:SignInComponent,
                 path: "login"
             },
+            {
+                component:CheckoutComponent,
+                path: "checkout"
+            },
+
+
             {
                 component: StoreFrontComponent,
                 path: "**"

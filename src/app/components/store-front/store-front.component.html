@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="small-12 medium-8 columns">
-    <h3>Pick your Items...</h3>
+    <h3 class="intro">Pick your Items...</h3>
     <ul class="product-list">
       <li *ngFor="let product of products | async"
           class="product-container">
@@ -11,23 +11,24 @@
               <img src="./assets/products/{{product.code}}.jpg"
                    class="product_image"/>
             </div>
-            <div class="medium-8 columns">
+            <div class="medium-8 columns productContent">
               <h4>
                 <span class="text--bold js-product-name">{{product.name}}</span>
                 <small class="product_price js-product-price">{{product.price | currency:'GBP':true}}</small><br><br>
               </h4>
               <p class="js-product-desc">{{product.description}}</p>
             </div>
-            <div class="medium-3 columns">
-              <table class="itemsGroup">
+            <div class="medium-3 columns buttonContent">
+              <table class="itemsGroup buttonContentMargin">
                 <th>
                 <button type="button"
-                class="button primary large js-btn-add" id="addcart{{product.name}}"
+                class="button primary large js-btn-add" id="addcart{{product.name}}" (click)="addCart(product
+                )"
                 >+</button>
                 </th>
-                <th><label id="product{{product.id}}" ></label></th>
+                <th><label id="product{{product.id}}" >{{product.quantity}}</label></th>
                 <th><button type="button" 
-                class="button secondary large js-btn-remove"  id="removecart{{product.name}}"
+                class="button secondary large js-btn-remove"  id="removecart{{product.name}}" (click)="removeCart(product)"
                 >-</button></th>
               </table>
             </div>
@@ -37,6 +38,7 @@
     </ul>
   </div>
   <div class="small-12 medium-4 columns">
-    
+      <app-shopping-basket [noOfItems]="totalItems" [grosstotal] ="productPrice" [product] ="listOfProducts"></app-shopping-basket>
   </div>
 </div>
+

@@ -10,7 +10,8 @@ import { AccountService } from '../../services/account.service';
 })
 export class SignInComponent implements OnInit {
 
-
+users:any;
+message:any;
 
   ngOnInit() {
   }
@@ -25,7 +26,10 @@ export class SignInComponent implements OnInit {
   createUser(): void {
     this.accountService.createUser(this.user)
         .subscribe( data => {
-          alert("User created successfully.");
+          this.users=data;
+          alert("Successfully Logged in.");
+          this.router.navigate(['/products'])
+          console.log(data);
         });
 
   };

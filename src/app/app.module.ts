@@ -23,6 +23,8 @@ import { HttpClientXsrfModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
 import { SignInComponent } from "./components/sign-in/sign-in.component";
 import { AccountService } from "./services/account.service";
+import { ShoppingBasketComponent } from './components/shopping-basket/shopping-basket.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
@@ -34,6 +36,8 @@ import { AccountService } from "./services/account.service";
     StoreFrontComponent,
     HeaderComponent,
     SignInComponent,
+    ShoppingBasketComponent,
+    CheckoutComponent,
 
 
   ],
